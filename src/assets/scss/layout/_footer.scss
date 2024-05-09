@@ -1,0 +1,13 @@
+.navbar-nav {
+  .nav-link {
+    img{
+      width: 24px;
+      @include pad {
+        width: 40px;
+      }
+      @include pc {
+        width: 48px;
+      }
+    }
+  }
+}

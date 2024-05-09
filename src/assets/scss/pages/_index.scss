@@ -1,0 +1,25 @@
+@import '../utils/mixin';
+
+section:first-of-type {
+  @include bg-img('../assets/images/home-header-sm.png', auto);
+  // ('../images/w3/home-header-sm.png', auto)
+  // background: url('../../../assets/images/w3/home-header-sm.png');
+  background-attachment: fixed;
+  @include mobile {
+  }
+  @include pad {
+    @include bg-img('../assets/images/home-header.png', auto);
+    // background-image: url('../../../assets/images/w3/home-header.png');
+  }
+}
+
+section:nth-of-type(4) {
+  background: url('../assets/images/index-bg-sm.png');
+  background-attachment: fixed;
+  @include pad {
+    background: url('../assets/images/index-bg-md.png');
+  }
+  @include pc {
+    background: url('../assets/images/index-bg.png');
+  }
+}

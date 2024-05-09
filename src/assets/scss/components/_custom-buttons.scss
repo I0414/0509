@@ -1,0 +1,23 @@
+.btn-custom-hex {
+    @include button-variant(#60F0AE, #60F0AE)
+}
+
+.btn-outline-hex {
+    @include button-outline-variant(#60F0AE)
+}
+
+.blueBox {
+    background: blue;
+    height: 100px;
+    width: 100px;
+}
+.dark {
+    background: #555555;
+    height: 24px;
+    width: 24px;
+}
+.light {
+    background: #B75929;
+    height: 24px;
+    width: 24px;
+}
