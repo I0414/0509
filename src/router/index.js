@@ -38,12 +38,29 @@ const routes = [
         path: 'checkout/:orderId',
         component: () => import('../views/UserCheckout.vue'),
         name: 'checkout'
-      },
-      { path: 'blogs', component: () => import('../views/UserBlogs.vue') },
-      { path: 'blog/:blogId', component: () => import('../views/UserBlog.vue') },
-      { path: 'qa', component: () => import('../views/UserQA.vue') }
+      }
+      // { path: 'blogs', component: () => import('../views/UserBlogs.vue') },
+      // { path: 'blog/:blogId', component: () => import('../views/UserBlog.vue') },
+      // { path: 'qa', component: () => import('../views/UserQA.vue') }
     ]
-  }
+  },
+  {
+    path: '/location',
+    component: () => import('../views/LocatedBoard.vue'),
+    children: [
+      { path: 'stores', component: () => import('../views/LocatedStores.vue') },
+      { path: 'stores/:storeId', component: () => import('../views/LocatedStore.vue') }
+    ]
+  },
+  {
+    path: '/adv',
+    component: () => import('../views/BlogsBoard.vue'),
+    children: [
+      { path: 'blogs', component: () => import('../views/UserBlogs.vue') },
+      { path: 'blogs/:blogId', component: () => import('../views/UserBlog.vue') }
+    ]
+  },
+  { path: '/qa', component: () => import('../views/UserQA.vue') }
 ]
 
 const router = createRouter({

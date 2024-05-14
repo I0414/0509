@@ -29,7 +29,7 @@
 export default {
   methods: {
     logout() {
-      const api = `${process.env.VUE_APP_API}logout`;
+      const api = `${import.meta.env.VITE_APP_API}logout`;
       this.$http.post(api, this.user).then((res) => {
         if (res.data.success) {
           this.$router.push('/login');

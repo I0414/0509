@@ -242,7 +242,7 @@ export default {
       const uploadedFile = this.$refs.fileInput.files[0];
       const formData = new FormData();
       formData.append('file-to-upload', uploadedFile);
-      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/upload`;
+      const url = `${import.meta.env.VITE_APP_API}api/${import.meta.env.VITE_APP_PATH}/admin/upload`;
       this.$http.post(url, formData).then((res) => {
         console.log(res.data);
         if (res.data.success) {

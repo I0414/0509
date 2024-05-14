@@ -178,6 +178,6 @@ export default {
 };
 </script>
 
-<style lang="scss">
-    // @import '../assets/scss/pages/_index.scss';
+<style lang="scss" scoped>
+    @import '../assets/scss/pages/_index.scss';
 </style>
