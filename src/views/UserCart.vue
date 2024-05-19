@@ -2,7 +2,7 @@
   <LoadingView :active="isLoading"></LoadingView>
   <div class="container">
     <div class="row mt-4">
-      <div class="col-md-7">
+      <!-- <div class="col-md-7">
         <table class="table align-middle">
           <thead>
             <tr>
@@ -13,7 +13,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="item in products" :key="item.id">
+            <tr v-for="item in sortProducts" :key="item.id">
               <td style="width: 200px">
                 <div
                   style="height: 100px; background-size: cover; background-position: center"
@@ -40,11 +40,11 @@
                   <button
                     type="button"
                     class="btn btn-outline-danger"
-                    :disabled="this.status.loadingItem === item.id"
-                    @click="addCart(item.id)"
+                    :disabled="loadingItem === item.id"
+                    @click="addToCart(item.id)"
                   >
                     <div
-                      v-if="this.status.loadingItem === item.id"
+                      v-if="loadingItem === item.id"
                       class="spinner-grow text-danger spinner-grow-sm"
                       role="status"
                     >
@@ -57,17 +57,18 @@
             </tr>
           </tbody>
         </table>
-      </div>
+      </div> -->
       <!-- 購物車列表 -->
-      <div class="col-md-5">
+      <div class="col-md-6">
         <div class="sticky-top">
           <table class="table align-middle">
             <thead>
               <tr>
                 <th></th>
+                <th>圖片</th>
                 <th>品名</th>
                 <th style="width: 110px">數量</th>
-                <th>單價</th>
+                <th class="text-end">單價</th>
               </tr>
             </thead>
             <tbody>
@@ -77,11 +78,14 @@
                     <button
                       type="button"
                       class="btn btn-outline-danger btn-sm"
-                      :disabled="status.loadingItem === item.id"
+                      :disabled="loadingItem === item.id"
                       @click="removeCartItem(item.id)"
                     >
                       <i class="bi bi-x"></i>
                     </button>
+                  </td>
+                  <td style="width: 200px">
+                    <img :src="item.product.imageUrl" alt="">
                   </td>
                   <td>
                     {{ item.product.title }}
@@ -95,7 +99,7 @@
                           id="quantityInput"
                           class="form-control col-auto"
                           min="1"
-                          :disabled="item.id === status.loadingItem"
+                          :disabled="item.id === loadingItem"
                           @change="updateCart(item)"
                           v-model.number="item.qty"
                         />
@@ -113,7 +117,7 @@
             </tbody>
             <tfoot>
               <tr>
-                <td colspan="3" class="text-end">總計</td>
+                <td colspan="4" class="text-end">總計</td>
                 <td class="text-end">{{ $filters.currency(cart.total) }}</td>
               </tr>
               <tr v-if="cart.final_total !== cart.total">
@@ -122,7 +126,7 @@
               </tr>
             </tfoot>
           </table>
-          <div class="input-group mb-3 input-group-sm">
+          <div class="input-group mb-3 input-group-sm d-flex align-items-end justify-content-end">
             <label for="couponInput">
               <input
                 type="text"
@@ -140,9 +144,9 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="my-5 row justify-content-center">
-      <FormView class="col-md-6" v-slot="{ errors }" @submit="createOrder">
+      <div class="col-md-6">
+        <div class="row justify-content-end mt-2">
+          <FormView class="col-md-10" v-slot="{ errors }" @submit="onSubmitOrder">
         <div class="mb-3">
           <label for="email" class="form-label">Email</label>
           <FieldView
@@ -182,7 +186,7 @@
             class="form-control"
             :class="{ 'is-invalid': errors['電話'] }"
             placeholder="請輸入電話"
-            rules="required"
+            rules="required|isPhone"
             v-model="form.user.tel"
           ></FieldView>
           <ErrorMessage name="電話" class="invalid-feedback"></ErrorMessage>
@@ -218,91 +222,48 @@
           <button class="btn btn-danger">送出訂單</button>
         </div>
       </FormView>
+        </div>
+        
+      </div>
+    </div>
+    <div class="my-5 row ">
+      
     </div>
   </div>
 </template>
 
 <script>
+import { mapState, mapActions } from 'pinia';
+import productStore from '../stores/productStore';
+import statusStore2 from '../stores/statusStore2';
+import cartStore from '../stores/cartStore';
+import { defineRule } from 'vee-validate';
+
+defineRule('isPhone', (value) => {
+  const phoneNumber = /^(09)[0-9]{8}$/;
+  return phoneNumber.test(value) ? true : '需要正確的電話號碼';
+});
+
 export default {
   data() {
     return {
-      products: [],
       product: {},
-      status: {
-        loadingItem: '', // 對應品項 id
-      },
-      form: {
-        user: {
-          name: '',
-          email: '',
-          tel: '',
-          address: '',
-        },
-        message: '',
-      },
-      cart: {},
       coupon_code: '',
     };
   },
+  computed: {
+    ...mapState(productStore, ['sortProducts']),
+    ...mapState(cartStore, ['cart', 'form']),
+    ...mapState(statusStore2, ['isLoading', 'loadingItem']),
+  },
   methods: {
-    getProducts() {
-      const url = `${import.meta.env.VITE_APP_API}api/${import.meta.env.VITE_APP_PATH}/products/all`;
-      this.isLoading = true;
-      this.$http.get(url).then((response) => {
-        this.products = response.data.products;
-        console.log('products:', response);
-        this.isLoading = false;
-      });
-    },
+    ...mapActions(productStore, ['getProducts']),
+    ...mapActions(cartStore, ['addToCart', 'getCart', 'updateCart', 'removeCartItem', 'addCouponCode', 'createOrder']),
+
     getProduct(id) {
       this.$router.push(`/user/product/${id}`);
     },
-    addCart(id) {
-      const url = `${import.meta.env.VITE_APP_API}api/${import.meta.env.VITE_APP_PATH}/cart`;
-      this.status.loadingItem = id;
-      const cart = { product_id: id, qty: 1 };
-      this.$http.post(url, { data: cart }).then((res) => {
-        this.$httpMessageState(res, '加入購物車');
-        this.status.loadingItem = '';
-        console.log(res);
-        this.getCart();
-      });
-    },
-    getCart() {
-      const url = `${import.meta.env.VITE_APP_API}api/${import.meta.env.VITE_APP_PATH}/cart`;
-      this.isLoading = true;
-      this.$http.get(url).then((response) => {
-        console.log(response);
-        this.cart = response.data.data;
-        this.isLoading = false;
-      });
-    },
-    updateCart(item) {
-      const url = `${import.meta.env.VITE_APP_API}api/${import.meta.env.VITE_APP_PATH}/cart/${item.id}`;
-      this.isLoading = true;
-      this.status.loadingItem = item.id;
-      const cart = {
-        product_id: item.product_id,
-        qty: item.qty,
-      };
-      this.$http.put(url, { data: cart }).then((res) => {
-        this.$httpMessageState(res, '更新購物車資訊');
-        console.log(res);
-        this.status.loadingItem = '';
-        this.getCart();
-      });
-    },
-    removeCartItem(id) {
-      this.status.loadingItem = id;
-      const url = `${import.meta.env.VITE_APP_API}api/${import.meta.env.VITE_APP_PATH}/cart/${id}`;
-      this.isLoading = true;
-      this.$http.delete(url).then((response) => {
-        this.$httpMessageState(response, '移除購物車品項');
-        this.status.loadingItem = '';
-        this.getCart();
-        this.isLoading = false;
-      });
-    },
+    
     addCouponCode() {
       const url = `${import.meta.env.VITE_APP_API}api/${import.meta.env.VITE_APP_PATH}/coupon`;
       const coupon = {
@@ -315,19 +276,9 @@ export default {
         this.isLoading = false;
       });
     },
-    createOrder() {
-      const url = `${import.meta.env.VITE_APP_API}api/${import.meta.env.VITE_APP_PATH}/order`;
-      const order = this.form;
-      this.$http.post(url, { data: order })
-        .then((res) => {
-          console.log(res);
-          const { orderId } = res.data;
-          // this.$router.push(`/user/checkout/${orderId}`);
-          const checkoutRoute = { name: 'checkout', params: { orderId } };
-          // 导航到 checkout 路由
-          this.$router.push(checkoutRoute);
-        });
-    },
+    onSubmitOrder() {
+      this.createOrder(this.$router)
+    }
   },
   created() {
     this.getProducts();

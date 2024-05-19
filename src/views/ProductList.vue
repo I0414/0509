@@ -28,7 +28,7 @@
           {{ $filters.currency(item.price) }}
         </td>
         <td>
-          <span class="text-success" v-if="item.is_enabled">啟用</span>
+          <span class="text-secondary" v-if="item.is_enabled">啟用</span>
           <span class="text-muted" v-else>未啟用</span>
         </td>
         <td>

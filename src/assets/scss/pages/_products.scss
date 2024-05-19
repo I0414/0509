@@ -1,10 +1,10 @@
-@import "../utils/mixin";
+@import '../utils/mixin';
 
 header {
   .nav-link:hover,
-  .nav-link:active,
+  .nav-link.active,
   .nav-link:focus {
-    border-bottom: 8px solid #AA0511 !important;
+    border-bottom: 8px solid #aa0511 !important;
     // height: 56px;
     padding-bottom: 8px;
     @include pad {

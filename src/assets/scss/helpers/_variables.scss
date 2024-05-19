@@ -299,8 +299,8 @@ $cyans: (
 
 // scss-docs-start theme-color-variables
 $primary: #aa0601 !default;
-$secondary: $gray-600 !default;
-$success: #650300 !default;
+$secondary: #650300 !default; // $gray-600 !default;
+$success: $green !default;
 $info: $cyan !default;
 $warning: $yellow !default;
 $danger: $red !default;

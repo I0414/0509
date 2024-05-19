@@ -39,10 +39,12 @@ const routes = [
         component: () => import('../views/UserCheckout.vue'),
         name: 'checkout'
       }
-      // { path: 'blogs', component: () => import('../views/UserBlogs.vue') },
-      // { path: 'blog/:blogId', component: () => import('../views/UserBlog.vue') },
-      // { path: 'qa', component: () => import('../views/UserQA.vue') }
     ]
+  },
+  {
+    path: '/glasses',
+    component: () => import('../views/GlassesBoard.vue'),
+    children: [{ path: 'cart', component: () => import('../views/GlassesCart.vue') }]
   },
   {
     path: '/location',
@@ -67,7 +69,16 @@ const router = createRouter({
   // history: createWebHashHistory(import.meta.env.BASE_URL),
   history: createWebHashHistory(),
   linkActiveClass: 'active',
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      // 如果存在之前保存的滚动位置，则直接返回
+      return savedPosition
+    } else {
+      // 否则返回顶部
+      return { top: 0 }
+    }
+  }
 })
 
 export default router

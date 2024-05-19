@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-success mb-3 mb-md-2 mb-md-4">
+  <section class="bg-secondary mb-3 mb-md-2 mb-md-4">
     <div class="container">
       <nav class="navbar mx-n4" data-bs-theme="dark">
         <ul class="navbar-nav w-100 w-md-auto d-flex flex-row justify-content-between">

@@ -1,5 +1,5 @@
 <template>
-  <div class="container mt-5">
+  <div class="container py-7 py-md-11">
     <FormView class="row justify-content-center needs-validation" novalidate v-slot="{ errors }"
       @submit="signIn">
       <div class="col-md-6">
@@ -10,27 +10,35 @@
             type="email"
             name="email"
             id="inputEmail"
+            autocomplete="current-username"
             class="form-control"
             :class="{ 'is-invalid': errors && errors['email'],
-            'is-valid': errors && !errors['email'] }"
+            'is-valid': errors && !errors['email'] && user.username}"
             rules="email|required"
             placeholder="Email address"
             required
             v-model="user.username"
           ></FieldView>
-          <div v-if="isEmailValid" class="valid-feedback">Looks good!</div>
+          <div class="valid-feedback">Looks good!</div>
         <ErrorMessage name="email" class="invalid-feedback"></ErrorMessage>
         </div>
         <div class="mb-2">
           <label for="inputPassword" class="sr-only">Password</label>
-          <input
+          <FieldView
             type="password"
+            name="Password"
             id="inputPassword"
+            autocomplete="current-password"
             class="form-control"
+            :class="{ 'is-invalid': errors['Password'],
+            'is-valid': errors && !errors['Password'] && user.password}"
+            rules="required"
             placeholder="Password"
             required
             v-model="user.password"
           />
+          <div class="valid-feedback">Looks good!</div>
+          <ErrorMessage name="Password" class="invalid-feedback"></ErrorMessage>
         </div>
 
         <div class="text-end mt-4">
@@ -52,22 +60,22 @@ export default {
         username: '',
         password: '',
       },
-      isEmailValid: false,
+      // isEmailValid: false,
     };
   },
-  mounted() {
-    // 在页面加载时检查电子邮件地址的有效性
-    this.isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.user.username);
-  },
-  watch: {
-    'user.username': {
-      handler(newValue) {
-        // 当用户输入发生变化时，更新电子邮件地址的有效性
-        this.isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(newValue);
-      },
-      deep: true,
-    },
-  },
+  // mounted() {
+  //   // 在页面加载时检查电子邮件地址的有效性
+  //   this.isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.user.username);
+  // },
+  // watch: {
+  //   'user.username': {
+  //     handler(newValue) {
+  //       // 当用户输入发生变化时，更新电子邮件地址的有效性
+  //       this.isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(newValue);
+  //     },
+  //     deep: true,
+  //   },
+  // },
   methods: {
     signIn() {
       const api = `${import.meta.env.VITE_APP_API}admin/signin`;

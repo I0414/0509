@@ -10,7 +10,7 @@
           <img :src="product.image" alt="" />
         </div>
         <div class="col-md-6 d-flex flex-column">
-          <h3 class="fw-normal text-success mb-0 fs-4 fs-lg-8">
+          <h3 class="fw-normal text-secondary mb-0 fs-4 fs-lg-8">
             {{ product.title }}
           </h3>
           <div class="d-flex justify-content-between align-items-center mb-md-1 mb-lg-3">
@@ -28,7 +28,7 @@
               {{ product.content }}
             </span>
           </p>
-          <a class="d-none d-xl-block fs-3 fw-black text-success mt-auto ms-auto mb-0">
+          <a class="d-none d-xl-block fs-3 fw-black text-secondary mt-auto ms-auto mb-0">
             More
           </a>
         </div>

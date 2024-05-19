@@ -8,16 +8,16 @@
       <div class=" navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav flex-column flex-md-row ms-auto fs-5">
           <div class="row g-0 text-center">
-            <router-link to="/user/cart" class="nav-link col-6 border border-white border-md-0 col-md-auto px-md-6 py-md-4"
+            <router-link to="/glasses/cart" class="nav-link col-6 border border-white border-md-0 col-md-auto px-md-6 py-md-4"
               >系列鏡框</router-link>
             <router-link to="/location/stores" class="nav-link col-6 border border-white border-md-0 col-md-auto px-md-6 py-md-4"
               >門市據點</router-link>
             <router-link to="/adv/blogs" class="nav-link col-6 border border-white border-md-0 col-md-auto px-md-6 py-md-4"
               >部落格</router-link>
-            <router-link to="/qa" class="nav-link col-6 border border-white border-md-0 col-md-auto px-md-6 py-md-4"
-              >常見問題</router-link>
+            <!-- <router-link to="/qa" class="nav-link col-6 border border-white border-md-0 col-md-auto px-md-6 py-md-4"
+              >常見問題</router-link> -->
             <router-link to="/user/cart" class="nav-link col-6 border border-white border-md-0 col-md-auto px-md-6 py-md-4 me-md-n6"
-              >購物車<span class="badge rounded-pill bg-white text-danger">0</span></router-link>
+              >購物車<span class="badge rounded-pill bg-white text-danger ms-1">0</span></router-link>
           </div>
         </div>
       </div>
@@ -25,11 +25,13 @@
   </nav>
 </template>
 
-<script>
-  // import { mapState } from 'pinia';
-
+<!-- <script>
+  import { mapState } from 'pinia';
+  import cartStore from '@/stores/cartStore';
 
   export default {
-  
+  computed: {
+    ...mapState(cartStore, ['cart'])
   }
-</script>
+  }
+</script> -->
