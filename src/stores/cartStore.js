@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 // import statusStore from './statusStore';
 import statusStore2 from './statusStore2'
 
-const status = statusStore2()
+// const status = statusStore2()
 
 export default defineStore('cartStore', {
   state: () => ({
@@ -21,6 +21,7 @@ export default defineStore('cartStore', {
   }),
   actions: {
     addToCart(id, qty = 1) {
+      const status = statusStore2()
       const url = `${import.meta.env.VITE_APP_API}api/${import.meta.env.VITE_APP_PATH}/cart`
       const cart = {
         product_id: id,
@@ -37,6 +38,7 @@ export default defineStore('cartStore', {
       })
     },
     getCart() {
+      const status = statusStore2()
       const url = `${import.meta.env.VITE_APP_API}api/${import.meta.env.VITE_APP_PATH}/cart`
       status.isLoading = true
       axios.get(url).then((response) => {
@@ -46,6 +48,7 @@ export default defineStore('cartStore', {
       })
     },
     updateCart(item) {
+      const status = statusStore2()
       const url = `${import.meta.env.VITE_APP_API}api/${import.meta.env.VITE_APP_PATH}/cart/${item.id}`
       const cart = {
         product_id: item.product_id,
@@ -65,6 +68,7 @@ export default defineStore('cartStore', {
       })
     },
     removeCartItem(id) {
+      const status = statusStore2()
       const url = `${import.meta.env.VITE_APP_API}api/${import.meta.env.VITE_APP_PATH}/cart/${id}`
       status.isLoading = true
       status.loadingItem = id
@@ -79,6 +83,7 @@ export default defineStore('cartStore', {
       })
     },
     addCouponCode() {
+      const status = statusStore2()
       const url = `${import.meta.env.VITE_APP_API}api/${import.meta.env.VITE_APP_PATH}/coupon`
       const coupon = {
         code: this.coupon_code

@@ -17,7 +17,7 @@
             <!-- <router-link to="/qa" class="nav-link col-6 border border-white border-md-0 col-md-auto px-md-6 py-md-4"
               >常見問題</router-link> -->
             <router-link to="/user/cart" class="nav-link col-6 border border-white border-md-0 col-md-auto px-md-6 py-md-4 me-md-n6"
-              >購物車<span class="badge rounded-pill bg-white text-danger ms-1">0</span></router-link>
+              >購物車<span class="badge rounded-pill bg-white text-danger ms-1">{{ cart.carts ? cart.carts.length : 0 }}</span></router-link>
           </div>
         </div>
       </div>
@@ -25,13 +25,13 @@
   </nav>
 </template>
 
-<!-- <script>
+<script>
   import { mapState } from 'pinia';
   import cartStore from '@/stores/cartStore';
 
   export default {
   computed: {
-    ...mapState(cartStore, ['cart'])
-  }
-  }
-</script> -->
+    ...mapState(cartStore, ['cart']),
+  },
+}
+</script>
