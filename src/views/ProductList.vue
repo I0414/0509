@@ -36,7 +36,7 @@
             <button class="btn btn-outline-primary btn-sm"
               @click="openModal(false, item)">編輯</button>
             <button class="btn btn-outline-danger btn-sm"
-              @click="openDelProductModal">刪除</button>
+              @click="openDelProductModal(item)">刪除</button>
           </div>
         </td>
       </tr>

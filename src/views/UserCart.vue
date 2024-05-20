@@ -121,7 +121,7 @@
                 <td class="text-end">{{ $filters.currency(cart.total) }}</td>
               </tr>
               <tr v-if="cart.final_total !== cart.total">
-                <td colspan="3" class="text-end text-success">折扣價</td>
+                <td colspan="4" class="text-end text-success">折扣價</td>
                 <td class="text-end text-success">{{ $filters.currency(cart.final_total) }}</td>
               </tr>
             </tfoot>

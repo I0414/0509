@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <router-link class="navbar-brand" to="/user/cart">用戶端範例</router-link>
+      <router-link class="navbar-brand" to="/user/cart">結帳平台</router-link>
     </div>
   </nav>
   <div class="position-relative">

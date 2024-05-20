@@ -1,5 +1,4 @@
 <template>
-  <p>Dashboard</p>
   <div>
     <NavBar></NavBar>
     <div class="container-fluid">
