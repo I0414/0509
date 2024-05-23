@@ -9,13 +9,11 @@ This template should help get you started developing with Vue 3 in Vite.
 ## Customize configuration
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
-![購物](https://github.com/I0414/0509/assets/88125548/0e8f0868-f381-46ce-a185-b1ed19595c49)
+
 
 ## Project Setup
 
-```sh
-npm install
-```
+![購物](https://github.com/I0414/0509/assets/88125548/0e8f0868-f381-46ce-a185-b1ed19595c49)
 
 ### Compile and Hot-Reload for Development
 
