@@ -1,9 +1,9 @@
 <template>
   <form class="row mb-4 mb-md-7">
       <div class="col-auto">
-        <div class="fs-4">選擇地區</div>
+        <div class="fs-4" data-aos="fade-left" data-aos-duration="1200">選擇地區</div>
       </div>
-      <div class="col">
+      <div class="col" data-aos="fade-left" data-aos-duration="1200">
         <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
         <select class="form-select" id="inlineFormSelectPref" v-model="selectedArea">
           <!-- <option value="-1">請選擇區域</option> -->
@@ -13,7 +13,8 @@
       <div class="col-md-5 col-lg-8"></div>
     </form>
     <div class="row gy-4 gy-lg-9">
-      <div class="col-md-6 col-lg-4" v-for="(store, index) in filteredStores" :key="index">
+      <div class="col-md-6 col-lg-4" v-for="(store, index) in filteredStores" :key="index" :data-aos="'zoom-in'" 
+      :data-aos-delay="index * 100">
         <div class="card h-100">
           <img :src="store.image" alt="" class="card-img-top" />
           <div class="card-header fs-4">{{ store.name }}</div>

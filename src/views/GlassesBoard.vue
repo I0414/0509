@@ -1,5 +1,6 @@
 <template>
-      <header>
+  <LoadingView :active="isLoading" z-index="1050"></LoadingView>
+    <header>
       <div class="container">
         <div class="row g-0 text-center text-black">
           <!-- <div class="col"><button class="nav-link text-black fs-6 fs-md-4 fs-lg-3 py-3 py-lg-4 border w-100" @click="showProducts('optical')">
@@ -16,7 +17,8 @@
 </template>
 
 <script>
-import { mapActions } from 'pinia';
+import { mapActions, mapState } from 'pinia';
+import statusStore2 from '../stores/statusStore2';
 import productStore from '../stores/productStore';
 import emitter from '@/methods/emitter';
 import ToastMessages from '@/components/ToastMessages.vue';
@@ -29,6 +31,9 @@ export default {
   },
   components: {
     ToastMessages,
+  },
+  computed:{
+    ...mapState(statusStore2, ['isLoading', 'loadingItem'])
   },
   methods: {
     ...mapActions(productStore, ['setCategory']),

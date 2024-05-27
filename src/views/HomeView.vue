@@ -50,7 +50,7 @@
             </router-link>
           </div>
           <div class="col-lg-4 mb-3 mb-lg-0" data-aos="zoom-in" data-aos-duration="2000">
-            <router-link to="/glasses/cart" class="d-block">
+            <router-link to="/glasses/cart" class="d-block" data-aos="fade-left" data-aos-duration="3000">
               <img src="../assets/images/home-section3-3.png" alt="" class="mb-2">
             <h2 class="fw-black fst-italic text-primary text-uppercase mb-lg-0">functional</h2>
             </router-link>

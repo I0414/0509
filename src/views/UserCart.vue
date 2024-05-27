@@ -1,5 +1,5 @@
 <template>
-  <LoadingView :active="isLoading"></LoadingView>
+  <LoadingView :active="isLoading" z-index="1050"></LoadingView>
   <div class="container">
     <div class="row mt-4">
       <!-- <div class="col-md-7">

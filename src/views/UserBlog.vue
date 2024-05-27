@@ -43,20 +43,20 @@
           </h3>
           <nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item fw-bold"><a href="#" class="text-primary"># special</a></li>
-              <li class="breadcrumb-item fw-bold ps-lg-4 active" aria-current="page"><a href="" class="text-primary">#
+              <li class="breadcrumb-item fw-bold" data-aos="zoom-in" data-aos-delay="0"><a href="#" class="text-primary"># special</a></li>
+              <li class="breadcrumb-item fw-bold ps-lg-4 active" aria-current="page" data-aos="zoom-in" data-aos-delay="200"><a href="" class="text-primary">#
                   sale</a></li>
             </ol>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item fw-bold"><a href="#" class="text-primary"># new_item</a></li>
-              <li class="breadcrumb-item fw-bold ps-lg-4"><a href="#" class="text-primary"># interview</a></li>
+              <li class="breadcrumb-item fw-bold" data-aos="zoom-in" data-aos-delay="400"><a href="#" class="text-primary"># new_item</a></li>
+              <li class="breadcrumb-item fw-bold ps-lg-4" data-aos="zoom-in" data-aos-delay="600"><a href="#" class="text-primary"># interview</a></li>
             </ol>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item fw-bold"><a href="#" class="text-primary"># trivia</a></li>
-              <li class="breadcrumb-item fw-bold ps-lg-4"><a href="#" class="text-primary"># news</a></li>
+              <li class="breadcrumb-item fw-bold"><a href="#" class="text-primary" data-aos="zoom-in" data-aos-delay="800"># trivia</a></li>
+              <li class="breadcrumb-item fw-bold ps-lg-4"><a href="#" class="text-primary" data-aos="zoom-in" data-aos-delay="1000"># news</a></li>
             </ol>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item fw-bold"><a href="#" class="text-primary"># event</a></li>
+              <li class="breadcrumb-item fw-bold"><a href="#" class="text-primary" data-aos="zoom-in" data-aos-delay="1200"># event</a></li>
             </ol>
           </nav>
         </div>

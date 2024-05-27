@@ -1,6 +1,6 @@
 <template>
   <div class="container py-7 py-md-11">
-    <h1 class="fs-4 fs-md-2 border-start border-primary border-8 ps-3 ms-n1 mb-4 mb-md-6">
+    <h1 class="fs-4 fs-md-2 border-start border-primary border-8 ps-3 ms-n1 mb-4 mb-md-6" data-aos="fade-left">
       門市據點
     </h1>
 

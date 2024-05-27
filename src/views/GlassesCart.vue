@@ -1,18 +1,18 @@
 <template>
   <section>
       <div class="banner">
-        <img v-if="category === 'optical'" class="d-lg-none w-50" src="../assets/images/product-header-sm-1.png" alt="">
-        <img v-if="category === 'optical'" class="d-lg-none w-50" src="../assets/images/product-header-sm-2.png" alt="">
-        <img v-if="category === 'optical'"  class="d-none d-lg-inline-block w-50" src="../assets/images/product-header-1.png" alt="">
-        <img v-if="category === 'optical'" class="d-none d-lg-inline-block w-50" src="../assets/images/product-header-2.png" alt="">
-        <img v-if="category === 'sun'" class="d-lg-none w-50" src="../assets/images/product-header-sm-3.png" alt="">
-        <img v-if="category === 'sun'" class="d-lg-none w-50" src="../assets/images/product-header-sm-4.png" alt="">
-        <img v-if="category === 'sun'"  class="d-none d-lg-inline-block w-50" src="../assets/images/product-header-3.png" alt="">
-        <img v-if="category === 'sun'" class="d-none d-lg-inline-block w-50" src="../assets/images/product-header-4.png" alt="">
-        <img v-if="category === 'func'" class="d-lg-none w-50" src="../assets/images/product-header-sm-2.png" alt="">
-        <img v-if="category === 'func'" class="d-lg-none w-50" src="../assets/images/product-header-sm-3.png" alt="">
-        <img v-if="category === 'func'"  class="d-none d-lg-inline-block w-50" src="../assets/images/product-header-2.png" alt="">
-        <img v-if="category === 'func'" class="d-none d-lg-inline-block w-50" src="../assets/images/product-header-3.png" alt="">
+        <img v-if="category === 'optical'" class="d-lg-none w-50" src="../assets/images/product-header-sm-1.png" alt="" data-aos="fade-right">
+        <img v-if="category === 'optical'" class="d-lg-none w-50" src="../assets/images/product-header-sm-2.png" alt="" data-aos="fade-left">
+        <img v-if="category === 'optical'"  class="d-none d-lg-inline-block w-50" src="../assets/images/product-header-1.png" alt="" data-aos="fade-right">
+        <img v-if="category === 'optical'" class="d-none d-lg-inline-block w-50" src="../assets/images/product-header-2.png" alt="" data-aos="fade-left">
+        <img v-if="category === 'sun'" class="d-lg-none w-50" src="../assets/images/product-header-sm-3.png" alt="" data-aos="fade-right">
+        <img v-if="category === 'sun'" class="d-lg-none w-50" src="../assets/images/product-header-sm-4.png" alt="" data-aos="fade-left">
+        <img v-if="category === 'sun'"  class="d-none d-lg-inline-block w-50" src="../assets/images/product-header-3.png" alt="" data-aos="fade-right">
+        <img v-if="category === 'sun'" class="d-none d-lg-inline-block w-50" src="../assets/images/product-header-4.png" alt="" data-aos="fade-left">
+        <img v-if="category === 'func'" class="d-lg-none w-50" src="../assets/images/product-header-sm-2.png" alt="" data-aos="fade-right">
+        <img v-if="category === 'func'" class="d-lg-none w-50" src="../assets/images/product-header-sm-3.png" alt="" data-aos="fade-left">
+        <img v-if="category === 'func'"  class="d-none d-lg-inline-block w-50" src="../assets/images/product-header-2.png" alt="" data-aos="fade-right">
+        <img v-if="category === 'func'" class="d-none d-lg-inline-block w-50" src="../assets/images/product-header-3.png" alt="" data-aos="fade-left">
       </div>
     </section>
   <section>

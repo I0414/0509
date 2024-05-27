@@ -49,7 +49,8 @@ app.component('FieldView', Field)
 app.component('ErrorMessage', ErrorMessage)
 
 AOS.init({
-  duration: 2500
+  offset: 120,
+  duration: 1000
 })
 
 app.mount('#app')

@@ -14,7 +14,7 @@
     </form>
 
     <div class="row gy-4 gy-lg-9">
-      <div class="col-lg-5" v-if="selectedStore">
+      <div class="col-lg-5" v-if="selectedStore" data-aos="fade-left">
         <div class="card h-100 border-0">
           <div class="row flex-column flex-md-row flex-lg-column">
             <div class="col">
@@ -43,7 +43,7 @@
         </div>
       </div>
 
-      <div class="col-lg">
+      <div class="col-lg" data-aos="fade-right">
         <iframe :src="selectedStore.map"
           allowfullscreen=""
           loading="lazy"
