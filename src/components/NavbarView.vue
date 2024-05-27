@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-md bg-primary p-0" data-bs-theme="dark">
+  <nav class="navbar navbar-expand-md bg-primary p-0" data-bs-theme="dark" data-aos="fade-down">
     <div class="container-fluid container-md px-0 px-md-3">
       <router-link to="/" class="navbar-brand p-0 ms-n3" aria-current="page" href="./index.html">
         <img src="../assets/images/favIcon.jpg" alt="" width="80px" height="80px">
@@ -16,7 +16,7 @@
               >部落格</router-link>
             <!-- <router-link to="/qa" class="nav-link col-6 border border-white border-md-0 col-md-auto px-md-6 py-md-4"
               >常見問題</router-link> -->
-            <router-link to="/user/cart" class="nav-link col-6 border border-white border-md-0 col-md-auto px-md-6 py-md-4 px-2 me-md-n4 me-n2"
+            <router-link to="/user/cart" class="nav-link col-6 border border-white border-md-0 col-md-auto px-md-6 py-md-4 me-md-n4"
               >購物車<span class="badge rounded-pill bg-white text-danger ms-1">{{ cart.carts ? cart.carts.length : 0 }}</span></router-link>
           </div>
         </div>

@@ -1,31 +1,31 @@
 <template>
-<section class="banner">
+<section data-aos="fade-down" class="banner">
       <div class="container text-end text-secondary py-12">
         <h3 class="mb-0 fw-normal">Promise-Desert 2020 早春系列</h3>
         <h1 class="mb-1">看得清，才能看得遠</h1>
         <router-link to="/glasses/cart" class="btn btn-primary fs-5 border-0">立即購買</router-link>  
       </div>
     </section>
-    <section style="background-color: #fbf2f2;">
+    <section style="background-color: #fbf2f2;" data-aos="fade-down">
       <div class="container py-9 py-md-11">
         <h2 class="fs-3 fs-md-2 text-center text-secondary mb-4">用專業的心，做專業的事</h2>
         <div class="row">
-          <div class="col-md-6 col-lg-3 d-flex flex-column align-items-center mb-4 mb-lg-0">
+          <div class="col-md-6 col-lg-3 d-flex flex-column align-items-center mb-4 mb-lg-0" data-aos="fade-up" >
             <img src="../assets/images/home-section2-1.png" alt="" class="mb-3" width="100px">
             <h4 class="text-secondary">單一價格</h4>
             <p class="text-start mb-0">無論任何度數皆不需追加費用即可擁有適合自己的薄型球面鏡片。</p>
           </div>
-          <div class="col-md-6 col-lg-3 d-flex flex-column align-items-center mb-4 mb-lg-0">
+          <div class="col-md-6 col-lg-3 d-flex flex-column align-items-center mb-4 mb-lg-0" data-aos="fade-down" >
             <img src="../assets/images/home-section2-2.png" alt="" class="mb-3" width="100px">
             <h4 class="text-secondary">20 分鐘即可取件</h4>
             <p class="text-start mb-0">為了您的寶貴時間著想，以豐富專業知識與技術將結帳到交件的時間縮減至最快 20 分鐘即可完成。</p>
           </div>
-          <div class="col-md-6 col-lg-3 d-flex flex-column align-items-center mb-4 mb-md-0">
+          <div class="col-md-6 col-lg-3 d-flex flex-column align-items-center mb-4 mb-md-0" data-aos="fade-up" >
             <img src="../assets/images/home-section2-3.png" alt="" class="mb-3" width="100px">
             <h4 class="text-secondary">安心售後服務</h4>
             <p class="text-start mb-0">我們提供長達 120 天的保固售後服務，不限會員資格皆享有免費深層保養及專業維修服務。</p>
           </div>
-          <div class="col-md-6 col-lg-3 d-flex flex-column align-items-center">
+          <div class="col-md-6 col-lg-3 d-flex flex-column align-items-center" data-aos="fade-down" >
             <img src="../assets/images/home-section2-4.png" alt="" class="mb-3" width="100px">
             <h4 class="text-secondary">關於鏡片</h4>
             <p class="text-start mb-0">使用世界知名頂級品牌，抗UV、防汙鍍膜薄型非球面鏡片。</p>
@@ -33,23 +33,23 @@
         </div>
       </div>
     </section>
-    <section>
+    <section data-aos="fade-down">
       <div class="container py-9 py-md-11">
         <h2 class="fs-3 fs-md-2 text-center text-secondary mb-9">經典系列鏡框</h2>
         <div class="row text-center">
-          <div class="col-lg-4 mb-3 mb-lg-0">
+          <div class="col-lg-4 mb-3 mb-lg-0" data-aos="zoom-in" data-aos-duration="1000">
             <router-link to="/glasses/cart" class="d-block">
               <img src="../assets/images/home-section3-1.png" alt="" class="mb-2">
             <h2 class="fw-black fst-italic text-primary text-uppercase mb-lg-0">optical</h2>
             </router-link>
           </div>
-          <div class="col-lg-4 mb-3 mb-lg-0">
+          <div class="col-lg-4 mb-3 mb-lg-0" data-aos="zoom-in" data-aos-duration="1500">
             <router-link to="/glasses/cart" class="d-block">
               <img src="../assets/images/home-section3-2.png" alt="" class="mb-2">
               <h2 class="fw-black fst-italic text-primary text-uppercase mb-lg-0">sunglasses</h2>
             </router-link>
           </div>
-          <div class="col-lg-4">
+          <div class="col-lg-4 mb-3 mb-lg-0" data-aos="zoom-in" data-aos-duration="2000">
             <router-link to="/glasses/cart" class="d-block">
               <img src="../assets/images/home-section3-3.png" alt="" class="mb-2">
             <h2 class="fw-black fst-italic text-primary text-uppercase mb-lg-0">functional</h2>
@@ -58,7 +58,7 @@
         </div>
       </div>
     </section>
-    <section class="bg-s-cover bg-p-top" >
+    <section class="bg-s-cover bg-p-top" data-aos="fade-down">
       <div class="container py-9 py-md-11">
         <h2 class="fs-3 fs-md-2 text-center text-white mb-9">聯名設計鏡框</h2>
         <div class="row gx-0 text-center">
@@ -79,11 +79,11 @@
         </div>
       </div>
     </section>
-    <section>
+    <section data-aos="fade-down">
       <div class="container py-9 py-md-11">
         <h2 class="fs-3 fs-md-2 text-center text-secondary mb-9">顧客推薦</h2>
         <div class="row gy-4">
-          <div class="col-sm-6 col-lg-3">
+          <div class="col-sm-6 col-lg-3" data-aos="flip-left">
             <div class="card h-100 shadow-sm rounded-top">
               <img src="../assets/images/home-section5-1.png" class="card-img-top" alt="...">
               <div class="card-body d-flex flex-column">
@@ -93,7 +93,7 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-3">
+          <div class="col-sm-6 col-lg-3" data-aos="flip-right">
             <div class="card h-100 shadow-sm rounded-top">
               <img src="../assets/images/home-section5-2.png" class="card-img-top" alt="...">
               <div class="card-body d-flex flex-column">
@@ -103,7 +103,7 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-3">
+          <div class="col-sm-6 col-lg-3" data-aos="flip-left">
             <div class="card h-100 shadow-sm rounded-top">
               <img src="../assets/images/home-section5-3.png" class="card-img-top" alt="...">
               <div class="card-body d-flex flex-column">
@@ -113,7 +113,7 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-3">
+          <div class="col-sm-6 col-lg-3" data-aos="flip-right">
             <div class="card h-100 shadow-sm rounded-top">
               <img src="../assets/images/home-section5-4.png" class="card-img-top" alt="...">
               <div class="card-body d-flex flex-column">

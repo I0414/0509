@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-primary" data-bs-theme="dark">
+  <footer class="bg-primary" data-bs-theme="dark" data-aos="fade-down">
     <div class="container text-white">
       <div class="py-4 py-sm-5">
         <div class="my-n1">
