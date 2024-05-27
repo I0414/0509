@@ -21,7 +21,7 @@
                     width="48px" /></a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link px-3 me-n3"><img src="../assets/images/ic_social_line.png" alt=""
+                <a href="" class="nav-link ps-3 pe-2 me-n2"><img src="../assets/images/ic_social_line.png" alt=""
                     width="48px" /></a>
               </li>
             </ul>
@@ -47,7 +47,7 @@
         </h6>
         <div class="navbar-nav flex-md-row">
           <a class="nav-link px-md-4 py-md-6" href="#">隱私權政策</a>
-          <a class="nav-link px-md-4 py-md-6 mt-n2 mt-md-0 me-n4" href="#">服務條款</a>
+          <a class="nav-link px-md-4 py-md-6 mt-n2 mt-md-0 me-md-n4" href="#">服務條款</a>
         </div>
       </div>
     </div>

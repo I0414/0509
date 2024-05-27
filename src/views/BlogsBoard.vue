@@ -1,19 +1,19 @@
 <template>
   <section class="bg-secondary mb-3 mb-md-2 mb-md-4">
     <div class="container">
-      <nav class="navbar mx-n4" data-bs-theme="dark">
-        <ul class="navbar-nav w-100 w-md-auto d-flex flex-row justify-content-between">
+      <nav class="navbar" data-bs-theme="dark">
+        <ul class="navbar-nav w-100 w-md-auto d-flex flex-row justify-content-between mx-n2 mx-md-0">
           <li class="nav-item" :class="{ 'active': selectedCategory === null }">
-            <a class="nav-link px-4 py-3" aria-current="page" @click="filterProducts(null)">最新消息</a>
+            <a class="nav-link px-2 px-md-4 py-3" aria-current="page" @click="filterProducts(null)">最新消息</a>
           </li>
           <li class="nav-item" :class="{ 'active': selectedCategory === '特別企劃' }">
-            <a class="nav-link px-4 py-3" @click="filterProducts('特別企劃')">特別企劃</a>
+            <a class="nav-link px-2 px-md-4 py-3" @click="filterProducts('特別企劃')">特別企劃</a>
           </li>
           <li class="nav-item" :class="{ 'active': selectedCategory === '新品上市' }">
-            <a class="nav-link px-4 py-3" @click="filterProducts('新品上市')">新品上市</a>
+            <a class="nav-link px-2 px-md-4 py-3" @click="filterProducts('新品上市')">新品上市</a>
           </li>
           <li class="nav-item" :class="{ 'active': selectedCategory === '鏡框小知識' }">
-            <a class="nav-link px-4 py-3" @click="filterProducts('鏡框小知識')">鏡框小知識</a>
+            <a class="nav-link px-2 px-md-4 py-3 me-n2 me-md-0" @click="filterProducts('鏡框小知識')">鏡框小知識</a>
           </li>
         </ul>
         <div href="" class="d-none d-md-block">
