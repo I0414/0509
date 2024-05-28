@@ -3,7 +3,9 @@
     <NavBar></NavBar>
     <div class="container-fluid">
       <ToastMessage></ToastMessage>
-      <router-view></router-view>
+      <div class="container">
+        <router-view></router-view>
+      </div>
     </div>
   </div>
 </template>

@@ -14,6 +14,7 @@ import { localize, setLocale } from '@vee-validate/i18n'
 import zhTW from '@vee-validate/i18n/dist/locale/zh_TW.json'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import * as c3 from 'c3'
 
 import App from './App.vue'
 import router from './router'
@@ -39,6 +40,8 @@ configure({
 setLocale('zh_TW')
 
 app.config.globalProperties.$httpMessageState = $httpMessageState
+
+app.config.globalProperties.$c3 = c3
 
 app.use(createPinia())
 app.use(VueAxios, axios)

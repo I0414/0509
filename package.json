@@ -18,6 +18,7 @@
     "axios": "^1.6.8",
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.3",
+    "c3": "^0.7.20",
     "gh-pages": "^6.1.1",
     "loading": "^1.13.3",
     "mitt": "^3.0.1",
